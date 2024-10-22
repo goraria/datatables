@@ -144,6 +144,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -153,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DataTables.cs" />
+    <Compile Include="Models\Demo.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Position.cs" />
@@ -296,6 +298,7 @@
     <Content Include="Scripts\libs\perfect-scrollbar\perfect-scrollbar.js" />
     <Content Include="Scripts\libs\popper\popper.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
