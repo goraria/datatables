@@ -143,10 +143,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\PositionController.cs" />
+    <Compile Include="Controllers\TablesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataTables.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Tables.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +186,48 @@
     <Content Include="Content\css\theme-default.css" />
     <Content Include="Content\fonts\boxicons.css" />
     <Content Include="Content\fonts\boxicons\boxicons.svg" />
+    <Content Include="Content\img\avatars\1.png" />
+    <Content Include="Content\img\avatars\5.png" />
+    <Content Include="Content\img\avatars\6.png" />
+    <Content Include="Content\img\avatars\7.png" />
+    <Content Include="Content\img\elements\1.jpg" />
+    <Content Include="Content\img\elements\11.jpg" />
+    <Content Include="Content\img\elements\12.jpg" />
+    <Content Include="Content\img\elements\13.jpg" />
+    <Content Include="Content\img\elements\17.jpg" />
+    <Content Include="Content\img\elements\18.jpg" />
+    <Content Include="Content\img\elements\19.jpg" />
+    <Content Include="Content\img\elements\2.jpg" />
+    <Content Include="Content\img\elements\20.jpg" />
+    <Content Include="Content\img\elements\3.jpg" />
+    <Content Include="Content\img\elements\4.jpg" />
+    <Content Include="Content\img\elements\5.jpg" />
+    <Content Include="Content\img\elements\7.jpg" />
+    <Content Include="Content\img\favicon\favicon.ico" />
+    <Content Include="Content\img\icons\brands\asana.png" />
+    <Content Include="Content\img\icons\brands\behance.png" />
+    <Content Include="Content\img\icons\brands\dribbble.png" />
+    <Content Include="Content\img\icons\brands\facebook.png" />
+    <Content Include="Content\img\icons\brands\github.png" />
+    <Content Include="Content\img\icons\brands\google.png" />
+    <Content Include="Content\img\icons\brands\instagram.png" />
+    <Content Include="Content\img\icons\brands\mailchimp.png" />
+    <Content Include="Content\img\icons\brands\slack.png" />
+    <Content Include="Content\img\icons\brands\twitter.png" />
+    <Content Include="Content\img\icons\unicons\cc-primary.png" />
+    <Content Include="Content\img\icons\unicons\cc-warning.png" />
+    <Content Include="Content\img\icons\unicons\chart-success.png" />
+    <Content Include="Content\img\icons\unicons\chart.png" />
+    <Content Include="Content\img\icons\unicons\paypal.png" />
+    <Content Include="Content\img\icons\unicons\wallet-info.png" />
+    <Content Include="Content\img\icons\unicons\wallet.png" />
+    <Content Include="Content\img\illustrations\girl-doing-yoga-light.png" />
+    <Content Include="Content\img\illustrations\man-with-laptop.png" />
+    <Content Include="Content\img\illustrations\page-misc-error-light.png" />
+    <Content Include="Content\img\layouts\layout-container-light.png" />
+    <Content Include="Content\img\layouts\layout-fluid-light.png" />
+    <Content Include="Content\img\layouts\layout-without-menu-light.png" />
+    <Content Include="Content\img\layouts\layout-without-navbar-light.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -257,10 +310,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Tables\Index.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Position\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
