@@ -13,19 +13,53 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+
     <link rel="stylesheet" href="~/Content/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="~/Content/css/theme-default.css" class="template-customizer-theme-css" />
 
+    @Scripts.Render("~/Scripts/jquery-3.7.1.js")
+    @Scripts.Render("~/Scripts/bootstrap.js")
+
+    @*/////////////////////////////////////////////////////////*@
+
     @Styles.Render("~/Content/fonts/boxicons.css")
+    @Styles.Render("~/Content/fonts/fontawesome/css/all.css")
     @Styles.Render("~/Content/css/core.css")
     @Styles.Render("~/Content/css/theme-default.css")
     @Styles.Render("~/Content/css/demo.css")
+    @* @Styles.Render("~/Content/bootstrap.css") *@
 
-    @Styles.Render("~/Scripts/libs/perfect-scrollbar/perfect-scrollbar.css")
-    @Styles.Render("~/Scripts/libs/apex-charts/apex-charts.css")
+    @*/////////////////////////////////////////////////////////*@
 
+    @Scripts.Render("~/Content/fonts/fontawesome/js/all.js")
+
+    @Scripts.Render("~/Scripts/libs/jquery/jquery.js")
+    @Scripts.Render("~/Scripts/libs/popper/popper.js")
+    @Scripts.Render("~/Scripts/js/bootstrap.js")
+    @Scripts.Render("~/Scripts/libs/perfect-scrollbar/perfect-scrollbar.js")
+    @Scripts.Render("~/Scripts/js/menu.js")
+    @Scripts.Render("~/Scripts/libs/apex-charts/apexcharts.js")
+    @Scripts.Render("~/Scripts/js/main.js")
+    @Scripts.Render("~/Scripts/js/ui-toasts.js")
+    @Scripts.Render("~/Scripts/js/dashboards-analytics.js")
+    
     @Scripts.Render("~/Scripts/js/helpers.js")
     @Scripts.Render("~/Scripts/js/config.js")
+    
+    @*/////////////////////////////////////////////////////////*@
+
+    @Scripts.Render("~/Scripts/dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+
+    @Styles.Render("~/Content/DataTables/css/dataTables.bootstrap.css")
+    @Styles.Render("~/Scripts/libs/perfect-scrollbar/perfect-scrollbar.css")
+    @Styles.Render("~/Scripts/libs/apex-charts/apex-charts.css")
+    
+    @*/////////////////////////////////////////////////////////*@
+
 </head>
 <body style="padding: 0">
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -62,7 +96,7 @@
                     <div class="app-brand demo">
                         <a href="/" class="app-brand-link">
                             <span class="app-brand-logo demo">
-                                <img src="~/favicon.ico" alt="" style="width: 48px"/>
+                                <img src="~/favicon.ico" alt="" style="width: 48px" />
                             </span>
                             <span class="app-brand-text demo menu-text fw-bold ms-2" style="text-transform: capitalize">Japtor</span>
                         </a>
@@ -221,11 +255,10 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
                             <!--li class="nav-item lh-1 me-4">
-                                <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free"
-                                   data-icon="octicon-star" data-size="large" data-show-count="true"
-                                   aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
+                            <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free"
+                               data-icon="octicon-star" data-size="large" data-show-count="true"
+                               aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
                             </li-->
-
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
@@ -239,7 +272,7 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="~/Content/img/avatars/3.png" class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="~/Content/img/avatars/1.png" class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -317,20 +350,22 @@
         </div>
     </div>
 
-    @Scripts.Render("~/Scripts/libs/jquery/jquery.js")
-    @Scripts.Render("~/Scripts/libs/popper/popper.js")
-    @Scripts.Render("~/Scripts/js/bootstrap.js")
-    @Scripts.Render("~/Scripts/libs/perfect-scrollbar/perfect-scrollbar.js")
-    @Scripts.Render("~/Scripts/js/menu.js")
-    @Scripts.Render("~/Scripts/libs/apex-charts/apexcharts.js")
-    @Scripts.Render("~/Scripts/js/main.js")
-    @Scripts.Render("~/Scripts/js/ui-toasts.js")
-    @Scripts.Render("~/Scripts/js/dashboards-analytics.js")
+    @* @Scripts.Render("~/Scripts/jquery-3.7.1.js") *@
+    @* @Scripts.Render("~/Scripts/bootstrap.js") *@
+    @* *@
+    @* @Scripts.Render("~/Content/fonts/fontawesome/js/all.js") *@
+    @* *@
+    @* @Scripts.Render("~/Scripts/libs/jquery/jquery.js") *@
+    @* @Scripts.Render("~/Scripts/libs/popper/popper.js") *@
+    @* @Scripts.Render("~/Scripts/js/bootstrap.js") *@
+    @* @Scripts.Render("~/Scripts/libs/perfect-scrollbar/perfect-scrollbar.js") *@
+    @* @Scripts.Render("~/Scripts/js/menu.js") *@
+    @* @Scripts.Render("~/Scripts/libs/apex-charts/apexcharts.js") *@
+    @* @Scripts.Render("~/Scripts/js/main.js") *@
+    @* @Scripts.Render("~/Scripts/js/ui-toasts.js") *@
+    @* @Scripts.Render("~/Scripts/js/dashboards-analytics.js") *@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    @Scripts.Render("~/Scripts/jquery-{version}.js")
-    @Scripts.Render("~/Scripts/bootstrap.js")
 
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/bootstrap")*@
