@@ -13,6 +13,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link rel="stylesheet" href="~/Content/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/Content/css/theme-default.css" class="template-customizer-theme-css" />
+
     @Styles.Render("~/Content/fonts/boxicons.css")
     @Styles.Render("~/Content/css/core.css")
     @Styles.Render("~/Content/css/theme-default.css")
@@ -57,9 +60,9 @@
             <div class="layout-page">
                 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                     <div class="app-brand demo">
-                        <a href="index.html" class="app-brand-link">
+                        <a href="/" class="app-brand-link">
                             <span class="app-brand-logo demo">
-                                <img src="~/favicon.ico" style="width: 48px" />
+                                <img src="~/favicon.ico" alt="" style="width: 48px"/>
                             </span>
                             <span class="app-brand-text demo menu-text fw-bold ms-2" style="text-transform: capitalize">Japtor</span>
                         </a>
@@ -85,6 +88,12 @@
                             <a href="@Url.Action("Home", "Home")" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-tachometer"></i>
                                 <div class="text-truncate" data-i18n="Basic">Home</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("Index", "Demo")" class="menu-link">
+                                <i class="menu-icon tf-icons bx bx-heart"></i>
+                                <div class="text-truncate" data-i18n="Basic">Demo</div>
                             </a>
                         </li>
 
@@ -211,11 +220,11 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class="nav-item lh-1 me-4">
+                            <!--li class="nav-item lh-1 me-4">
                                 <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free"
                                    data-icon="octicon-star" data-size="large" data-show-count="true"
                                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
-                            </li>
+                            </li-->
 
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -315,6 +324,7 @@
     @Scripts.Render("~/Scripts/js/menu.js")
     @Scripts.Render("~/Scripts/libs/apex-charts/apexcharts.js")
     @Scripts.Render("~/Scripts/js/main.js")
+    @Scripts.Render("~/Scripts/js/ui-toasts.js")
     @Scripts.Render("~/Scripts/js/dashboards-analytics.js")
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>

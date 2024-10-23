@@ -1,12 +1,28 @@
 ﻿@model datatables.Models.ModelTables
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<div>
-    <h4>ModelTables</h4>
-    <hr />
-    <dl class="dl-horizontal">
-    </dl>
+<div class="row">
+    <div class="col-xxl-12 mb-6 order-0">
+        <div class="card">
+            <div class="d-flex align-items-start row">
+                <div class="col-sm-12">
+                    <div class="card-body">
+                        <div>
+                            <h4>ModelTables</h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                            </dl>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
