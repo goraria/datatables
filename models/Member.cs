@@ -24,6 +24,6 @@ namespace datatables.Models {
     }
 
     public class ModelMember {
-
+        public List<ObjectMember> Members { get; set; }
     }
 }

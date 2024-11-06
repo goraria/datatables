@@ -60,6 +60,7 @@ namespace datatables.Controllers {
         //}
 
         public void ExportToExcel() {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             var datatablesDB = empDB.ListAll();
             using (ExcelPackage Ep = new ExcelPackage()) {
                 ExcelWorksheet Sheet = Ep.Workbook.Worksheets.Add("Report");
@@ -90,7 +91,7 @@ namespace datatables.Controllers {
 
                 Response.Clear();
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                Response.AddHeader("content-disposition", "attachment: filename=" + "Report.xlsx");
+                Response.AddHeader("content-disposition", "attachment; filename=" + "Report.xlsx");
                 Response.BinaryWrite(Ep.GetAsByteArray());
                 Response.End();
             }

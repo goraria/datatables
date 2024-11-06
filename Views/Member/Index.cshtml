@@ -1,8 +1,132 @@
-﻿@model datatables.Models.ModelMember
+﻿@model IEnumerable<datatables.Models.ObjectMember>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Member";
 }
 
-<h2>Member</h2>
+<div class="card">
+    <div class="card-datatable table-responsive">
+        <div id="member-table" class="dataTables_wrapper dt-bootstrap5 no-footer">
+            <div class="card-header flex-column flex-md-row pb-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="head-label text-center">
+                        <h5 class="card-title mb-0">Member DataTable</h5>
+                    </div>
+                    <div class="dt-action-buttons text-end pt-6 pt-md-0">
+                        <div class="dt-buttons btn-group flex-wrap">
+                            <div class="btn-group">
+                                <div class="dropdown me-3">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        Export
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li id="exportExcelBtn">
+                                            <a class="dropdown-item" href="#">Export as XLSX</a>
+                                        </li>
+                                        <li id="exportWordBtn">
+                                            <a class="dropdown-item" href="#">Export as DOCX</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="btnAdd" class="btn btn-primary">
+                                    <i class="fa-solid fa-plus me-2"></i> Add New Record
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table id="memberTable" class="table table-striped table-bordered table-hover display">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Salary</th>
+                            <th>Date of Birth</th>
+                            <th>Date of Start</th>
+                            <th>Date Modified</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var member in Model)
+                        {
+                            <tr>
+                                <td>@member.IDMember</td>
+                                <td>@member.FullName</td>
+                                <td>@member.Email</td>
+                                <td>@member.Gender</td>
+                                <td>@member.Salary</td>
+                                <td>@member.DateOfBirth.ToShortDateString()</td>
+                                <td>@member.DateOfStart.ToShortDateString()</td>
+                                <td>@member.DateModified.ToShortDateString()</td>
+                                <td>
+                                    <button class="btn btn-warning btnEdit" data-id="@member.IDMember">Edit</button>
+                                    <button class="btn btn-danger btnDelete" data-id="@member.IDMember">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="memberModalLabel">Add/Edit Member</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="memberForm">
+                    <input type="hidden" id="IDMember" name="IDMember" />
+                    <div class="mb-3">
+                        <label for="FullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="FullName" name="FullName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Gender" class="form-label">Gender</label>
+                        <input type="text" class="form-control" id="Gender" name="Gender" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Salary" class="form-label">Salary</label>
+                        <input type="number" class="form-control" id="Salary" name="Salary" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DateOfBirth" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DateOfStart" class="form-label">Date of Start</label>
+                        <input type="date" class="form-control" id="DateOfStart" name="DateOfStart" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="DateModified" class="form-label">Date Modified</label>
+                        <input type="date" class="form-control" id="DateModified" name="DateModified" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Processors/Member/Member.js"></script>
+}
 

@@ -110,7 +110,7 @@
 
                     <ul class="menu-inner py-1">
                         <!-- Dashboards -->
-                        <li class="menu-item active">
+                        <li class="menu-item">
                             @*open*@
                             <a href="@Url.Action("Index", "Home")" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-home-heart"></i>
@@ -369,6 +369,33 @@
 
     @*@Scripts.Render("~/bundles/jquery")*@
     @*@Scripts.Render("~/bundles/bootstrap")*@
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuLinks = document.querySelectorAll('.menu-link');
+            const activeLink = sessionStorage.getItem('activeLink');
+
+            if (activeLink) {
+                menuLinks.forEach(link => {
+                    if (link.href === activeLink) {
+                        link.parentElement.classList.add('active');
+                    } else {
+                        link.parentElement.classList.remove('active');
+                    }
+                });
+            }
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    menuLinks.forEach(link => link.parentElement.classList.remove('active'));
+                    this.parentElement.classList.add('active');
+                    sessionStorage.setItem('activeLink', this.href);
+                    window.location.href = this.href;
+                });
+            });
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
