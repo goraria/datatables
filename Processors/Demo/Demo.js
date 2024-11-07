@@ -1,5 +1,6 @@
 ﻿/// <reference path="jquery-3.7.1.intellisense.js" />
 
+// // View ready call loadData and add event to buttons
 $("#demo-table").ready(() => {
     loadData();
 
@@ -39,19 +40,17 @@ let loadData = () => {
     console.log("Initializing DataTable");
 
     $("#employeeTable").DataTable({
-        "processing": true,
-        "filter": true,
+        "processing": true, // Hiển thị tiến trình xử lý
         "searching": true,
-        info: true,
         ordering: true,
         paging: true,
-        order: [[0, 'asc']],
-        "bDestroy": true,
+        order: [[0, 'asc']], // sort bt id
+        "bDestroy": true, // Delete old DataTable before initial
         "ajax": {
-            url: '/Demo/List',
+            url: '/Demo/List', // API
             dataType: "json",
             type: 'GET',
-            dataSrc: '',
+            dataSrc: '', // Lấy data từ gốc JSON
         },
         "columns": [
             { "data": "EmployeeID" },
@@ -82,25 +81,19 @@ let loadData = () => {
             }
         },
         "initComplete": () => {
-            stylePagination();
+            stylePagination(); // call by start
         }
     }).on('draw', () => {
-        stylePagination();  // Gọi lại hàm stylePagination mỗi khi bảng được vẽ lại
+        stylePagination(); // call while navigate
     });
 
     console.log("Done");
 }
 
-// Hàm tùy chỉnh lại CSS cho pagination
 let stylePagination = () => {
     $('.dataTables_wrapper .dataTables_paginate .paginate_button')
-        .addClass('btn btn-sm btn-light mx-1')  // Thêm lớp Bootstrap
-        // .css('background-color', '#696cff');  // Tùy chỉnh màu sắc
+        .addClass('btn btn-sm btn-light mx-1');
 
-    // $('.dataTables_wrapper .dataTables_paginate .paginate_button.current')
-    //     .removeClass('btn-light')
-    //     .addClass('btn-primary text-white')
-    
     $('.dataTables_paginate').css({
         "display": "flex",
         "justify-content": "right",
@@ -128,14 +121,14 @@ let deleteEmployee = (id) => {
     });
 }
 
-let editEmployee = (id) => {
+let editEmployee = (id) => { // load data to modal
     $.get('/Demo/GetbyID', { ID: id }, (data) => {
         $('#employeeId').val(data.EmployeeID);
         $('#employeeName').val(data.Name);
         $('#employeeAge').val(data.Age);
         $('#employeeState').val(data.State);
         $('#employeeCountry').val(data.Country);
-        $('#employeeModal').modal('show');
+        $('#employeeModal').modal('show'); // show dodal
     });
 }
 
@@ -145,21 +138,22 @@ let clearModal = () => {
     $('#employeeAge').val('');
     $('#employeeState').val('');
     $('#employeeCountry').val('');
-    $('#employeeName, #employeeAge, #employeeState, #employeeCountry').css('border-color', 'lightgrey');
+    $('#employeeName, #employeeAge, #employeeState, #employeeCountry').css('border-color', 'lightgrey'); // Đặt lại màu viền các ô nhập
 }
 
 let validate = () => {
     let isValid = true;
     ['employeeName', 'employeeAge', 'employeeState', 'employeeCountry'].forEach(field => {
-        if ($('#' + field).val().trim() === "") {
-            $('#' + field).css('border-color', 'Red');
+        if ($('#' + field).val().trim() === "") { // Kiểm tra các trường trống
+            $('#' + field).css('border-color', 'Red'); // Đổi màu viền thành đỏ nếu trống
             isValid = false;
         } else {
-            $('#' + field).css('border-color', 'lightgrey');
+            $('#' + field).css('border-color', 'lightgrey'); // Đặt lại màu viền nếu có dữ liệu
         }
     });
-    return isValid;
+    return isValid; // Trả về true nếu tất cả các trường hợp lệ
 }
+
 
 // /// <reference path="jquery-3.7.1.intellisense.js" />
 //
