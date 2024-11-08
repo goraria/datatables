@@ -240,20 +240,13 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LocationController.cs" />
-    <Compile Include="Controllers\MemberController.cs" />
-    <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\TablesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DataTables.cs" />
     <Compile Include="Models\Demo.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Member.cs" />
-    <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Tables.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2792,9 +2785,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Tables\Index.cshtml" />
-    <Content Include="Views\Location\Index.cshtml" />
-    <Content Include="Views\Member\Index.cshtml" />
-    <Content Include="Views\Position\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
